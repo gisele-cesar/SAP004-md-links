@@ -1,6 +1,18 @@
-#!/usr/bin / env node
+#!/usr/bin/env node
 
+const mdLinks = require('./index');
 
-const [, , ...args] = process.argv;
+mdLinks(process.argv[2])
+  .then(array => {
+    if (typeof array === 'undefined') {
+      console.log('Não há links aqui');
+    } else {
+      array.forEach(obj => {
+        console.log(`text: ${obj.text} | href: ${obj.href} | file: ${obj.file} `)
+      });
+    }
+  })
+  .catch(error => console.log(error));
+//const [, , ...args] = process.argv;
 
-console.log(`Hello World ${args}`)
+//console.log(`Hello World ${args}`)
