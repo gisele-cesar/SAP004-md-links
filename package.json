@@ -30,6 +30,7 @@
     "fs": "0.0.1-security"
   },
   "devDependencies": {
+    "jest": "^26.1.0",
     "nodemon": "^2.0.4"
   }
 }
