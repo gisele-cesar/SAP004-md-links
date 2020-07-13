@@ -11,8 +11,8 @@ const mdLinks = (path) => {
         let array = [];
         regexLinks.map((link) => {
           const obj = {
-            text: `${link.match(/(?<=\[).+?(?=\])/g)}`,
             href: `${link.match(/(?<=\().+?(?=\))/g)}`,
+            text: `${link.match(/(?<=\[).+?(?=\])/g)}`,
             file: path.replace('[]', '')
           };
           array.push(obj);
